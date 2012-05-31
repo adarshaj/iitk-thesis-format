@@ -87,12 +87,12 @@
 \newcommand{\iitbdegree}[1]{\gdef\@iitbdegree{#1}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\reporttype}[1]{\gdef\@doctype{#1}}
-\newcommand{\approvaltype}[1]{\gdef\@approvaltype{#1}}
+\newcommand{\certificatetype}[1]{\gdef\@certificatetype{#1}}
 
-\newcommand{\thesis}{\reporttype{thesis}\approvaltype{Thesis}}
-\newcommand{\dissertation}{\reporttype{dissertation}\approvaltype{Dissertation}}
-\newcommand{\project}{\reporttype{project report}\approvaltype{Report}}
-\newcommand{\prelim}{\reporttype{preliminary report}\approvaltype{Report}}
+\newcommand{\thesis}{\reporttype{thesis}\certificatetype{Thesis}}
+\newcommand{\dissertation}{\reporttype{dissertation}\certificatetype{Dissertation}}
+\newcommand{\project}{\reporttype{project report}\certificatetype{Report}}
+\newcommand{\prelim}{\reporttype{preliminary report}\certificatetype{Report}}
 
 \gdef\@rollnum{Unknown 00000000}    % Default is Unknown 00000000
 \gdef\@iitbdegree{Unknown Degree}    % Default is Unknown Degree
@@ -154,76 +154,34 @@
 \def\enddedication{\end{center}\par\vfil\newpage}
 
 %=============================================================================
-% APPROVAL SHEET
+% CERTIFICATE SHEET
 % - start a new page. page 
 % - center the text vertically
 %=============================================================================
-\newcommand\@thesisapprovalmedskip{0.2in}
-\newcommand\@thesisapprovalbigskip{0.5in}
-\newcommand{\makeapproval}{
+\newcommand\@thesiscertificatemedskip{0.2in}
+\newcommand\@thesiscertificatebigskip{0.5in}
+\newcommand{\makecertificate}{
   %\setcounter{page}{2}
   \cleardoublepage
   \thispagestyle{empty}
-  \begin{center}
-    {\LARGE \bf \@approvaltype\ Approval}\\[\@thesisapprovalbigskip]
-    {\large The \@doctype\ entitled}\\[\@thesisapprovalmedskip]
-    {\bf\expandafter\uppercase\expandafter{\LARGE\@title}}\\[\@thesisapprovalmedskip]
-    {\large by}\\[\@thesisapprovalmedskip]
-    {\Large \bf \@author }\\
-    {\Large (Roll No. \@rollnum)}\\[\@thesisapprovalmedskip]
-    {\large is approved for the degree of} \\[\@thesisapprovalmedskip]
-    {\large \@iitbdegree } \\[\@thesisapprovalbigskip]
-    \ifx\@coadvisorname\@empty
-    \ifx\@exadvisorname\@empty % no co-advisor/external advisor
-    \begin{tabular}{ccc}
-      \rule{6cm}{1sp}                &\rule{10mm}{0pt}& \rule{6cm}{1sp} \\
-      {\Large Examiner}              && {\Large Examiner} \\[\@thesisapprovalmedskip]\\
-      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
-      {\Large Guide}                 && {\Large Chairman} \\[\@thesisapprovalmedskip]\\
-      {\Large Date:} \rule{4cm}{1sp} && \\ && \\
-      {\Large Place:} \rule{4cm}{1sp}&&
-    \end{tabular}
-    \else % only external advisor
-    \begin{tabular}{ccc}
-      \rule{6cm}{1sp}                & \rule{10mm}{0pt} & \rule{6cm}{1sp} \\
-      {\Large Examiner}              && {\Large Examiner} \\[\@thesisapprovalbigskip]\\
-      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
-      {\Large Guide}                 && {\Large External Guide} \\[\@thesisapprovalbigskip]\\
-      \multicolumn{3}{c}{\rule{6cm}{1sp}} \\
-      \multicolumn{3}{c}{\Large Chairman} \\[\@thesisapprovalbigskip]
-      {\Large Date:} \rule{4cm}{1sp} && \\ && \\
-      {\Large Place:} \rule{4cm}{1sp}&&
-    \end{tabular}
-    \fi %
-    \else % coadvisor
-    \ifx\@exadvisorname\@empty % but no external advisor 
-    \begin{tabular}{ccc}
-      \rule{6cm}{1sp}                &\rule{10mm}{0pt}& \rule{6cm}{1sp} \\
-      {\Large Examiner}              && {\Large Examiner} \\[\@thesisapprovalmedskip]\\
-      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
-      {\Large Guide}                 && {\Large Co Guide} \\[\@thesisapprovalbigskip]\\
-      \multicolumn{3}{c}{\rule{6cm}{1sp}} \\
-      \multicolumn{3}{c}{\Large Chairman} \\[\@thesisapprovalbigskip]
-      {\Large Date:} \rule{4cm}{1sp} && \\ && \\
-      {\Large Place:} \rule{4cm}{1sp}&&
-    \end{tabular}
-    \else % both co-advisor and external advisor
-    \begin{tabular}{ccc}
-      \rule{6cm}{1sp}                & \rule{10mm}{0pt} & \rule{6cm}{1sp} \\
-      {\Large Examiner}              && {\Large Examiner} \\[\@thesisapprovalbigskip]\\
-      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
-      {\Large Guide}                 && {\Large External Guide} \\[\@thesisapprovalbigskip]\\
-      \rule{6cm}{1sp}                && \rule{6cm}{1sp} \\
-      {\Large Co Guide}              && {\Large Chairman} \\[\@thesisapprovalbigskip]\\
-      {\Large Date:} \rule{4cm}{1sp} && \\ && \\
-      {\Large Place:} \rule{4cm}{1sp}&&
-    \end{tabular}
-    \fi %exadvisor empty
-    \fi %coadvisor empty
-     
+    \begin{center}
+      {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
+    \end{center}
+    {\large It is certified that the work contained in the \@doctype titled
+     \textbf{\@title}, by \textbf{\@author}, has been carried out under my/our
+     supervision and that this work has not been submitted elsewhere for a degree.}\\[\@thesiscertificatebigskip]
+    \begin{flushright}
+    \rule{6cm}{1sp} \\
+    {\large \@advisorname} \\
+    {\large \@advisordept} \\
+    {\large IIT Kanpur}
+    \end{flushright}
+
+    \begin{flushleft}
+    {\large \@date}
+    \end{flushleft}
 %change ends    
 
-  \end{center}
   \let\thanks\relax
   \let\maketitle\relax \let\iitbdegree\relax \let\project\relax \let\prelim\relax
   \let\department\relax
