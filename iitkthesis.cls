@@ -200,7 +200,6 @@
 %=============================================================================
 \def\abstract{
   \chapter*{Abstract}
-  \addcontentsline{toc}{chapter}{Abstract}
   \relax\markboth{ABSTRACT}{ABSTRACT}}
 \def\endabstract{\par\newpage}
 
