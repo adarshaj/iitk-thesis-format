@@ -49,21 +49,23 @@
 \PassOptionsToClass{12pt,a4paper}{report}
 \LoadClass{report}
 
-% who is advisor?
+% Advisor
 \def\@advisorname{None}
 \newcommand{\setguide}[1]{\def\@advisorname{#1}}
+\newcommand{\setguidedept}[1]{\def\@advisordept{#1}}
+
 
 % and coadvisor? (initialized to empty)
-\global\let\@coadvisorname\@empty
-\newcommand{\setcoguide}[1]{\def\@coadvisorname{#1}}
-\let\coguide\setcoguide %
-\newcommand{\show@coguide}{\@coadvisorname}
+%\global\let\@coadvisorname\@empty
+%\newcommand{\setcoguide}[1]{\def\@coadvisorname{#1}}
+%\let\coguide\setcoguide %
+%\newcommand{\show@coguide}{\@coadvisorname}
 
 % and exadvisor? (initialized to empty)
-\global\let\@exadvisorname\@empty
-\newcommand{\setexguide}[1]{\def\@exadvisorname{#1}}
-\let\exguide\setexguide %
-\newcommand{\show@exguide}{\@exadvisorname}
+%\global\let\@exadvisorname\@empty
+%\newcommand{\setexguide}[1]{\def\@exadvisorname{#1}}
+%\let\exguide\setexguide %
+%\newcommand{\show@exguide}{\@exadvisorname}
 
 %=============================================================================
 % TITLE PAGE
