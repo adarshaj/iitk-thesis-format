@@ -116,7 +116,7 @@
     \begin{center}
       \vfill
       \mbox{}\\
-      {\bf\expandafter\uppercase\expandafter{\LARGE\@title}} \\[\@thesistitlebigskip]
+      {\bf\expandafter\uppercase\expandafter{\Large\@title}} \\[\@thesistitlebigskip]
       {\large \textit{A \@doctype\ submitted}} \\
       {\large in Partial Fulfillment of the Requirements} \\
       {\large for the Degree of}\\[\@thesistitlemedskip]
