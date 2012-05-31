@@ -400,16 +400,16 @@
 
 \setlength{\headheight}{3mm}
 \setlength{\headsep}{12mm}
-\setlength{\topmargin}{15mm}
+\setlength{\topmargin}{25mm}
 % left side empty space on odd- & even-numbered pages
 \if@twoside
   \typeout{Two side is true}
-  \setlength{\oddsidemargin}{30mm}  % for two side printing
-  \setlength{\evensidemargin}{20mm}
+  \setlength{\oddsidemargin}{35mm}  % for two side printing
+  \setlength{\evensidemargin}{25mm}
 \else
   \typeout{Two side is false}
-  \setlength{\oddsidemargin}{30mm}  % for one side printing
-  \setlength{\evensidemargin}{30mm} % odd side margin = even side margin
+  \setlength{\oddsidemargin}{35mm}  % for one side printing
+  \setlength{\evensidemargin}{35mm} % odd side margin = even side margin
 \fi
 \setlength{\hoffset}{-1in} % already accounted for in the margins
 \setlength{\voffset}{-1in} % already accounted for in the margins
