@@ -348,33 +348,10 @@
   {\renewcommand{\baselinestretch}{\twoskip}\Large\normalsize}
 
 %=============================================================================
-% Finally set the various lengths/margins as required by IITB format
-% Check out LaTeX Companion for more details.
+% Finally set margins per the IITK format
 %=============================================================================
-% Paper height & width (A4 paper) - set by a4paper option to report
-%\setlength{\paperheight}{297mm}
-%\setlength{\paperwidth}{210mm}
-% total text area: height & width
-\setlength{\textheight}{245mm}
-\setlength{\textwidth}{160mm}
 
-\setlength{\headheight}{3mm}
-\setlength{\headsep}{12mm}
-\setlength{\topmargin}{25mm}
-% left side empty space on odd- & even-numbered pages
-\if@twoside
-  \typeout{Two side is true}
-  \setlength{\oddsidemargin}{35mm}  % for two side printing
-  \setlength{\evensidemargin}{25mm}
-\else
-  \typeout{Two side is false}
-  \setlength{\oddsidemargin}{35mm}  % for one side printing
-  \setlength{\evensidemargin}{35mm} % odd side margin = even side margin
-\fi
-\setlength{\hoffset}{-1in} % already accounted for in the margins
-\setlength{\voffset}{-1in} % already accounted for in the margins
-% line, paragraphs indent & spacing
-\setlength{\parindent}{5ex} % indentation 5 characters approx.
+\usepackage[top=25mm, outer=25mm, bottom=25mm, inner=35mm]{geometry}
 
 \doublespace
 
