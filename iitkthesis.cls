@@ -169,18 +169,18 @@
     \begin{center}
       {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
     \end{center}
-    {\large It is certified that the work contained in the \@doctype titled
+    It is certified that the work contained in the \@doctype\ titled
      \textbf{\@title}, by \textbf{\@author}, has been carried out under my/our
-     supervision and that this work has not been submitted elsewhere for a degree.}\\[\@thesiscertificatebigskip]
+     supervision and that this work has not been submitted elsewhere for a degree.\\[\@thesiscertificatebigskip]
     \begin{flushright}
     \rule{6cm}{1sp} \\
-    {\large \@advisorname} \\
-    {\large \@advisordept} \\
-    {\large IIT Kanpur}
+    \@advisorname \\
+    \@advisordept \\
+    IIT Kanpur 
     \end{flushright}
 
     \begin{flushleft}
-    {\large \@date}
+    \@date
     \end{flushleft}
 %change ends    
 
@@ -352,6 +352,18 @@
 %=============================================================================
 
 \usepackage[top=25mm, outer=25mm, bottom=25mm, inner=35mm]{geometry}
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\rhead{\thepage}
+
+\pagestyle{fancy}
+
+% This is done with the titlesec package
+\usepackage{titlesec}
+\assignpagestyle{\chapter}{empty}
+
+\usepackage{emptypage}
 
 \doublespace
 
