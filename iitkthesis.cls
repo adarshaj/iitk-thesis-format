@@ -163,7 +163,7 @@
 \newcommand\@thesiscertificatemedskip{0.2in}
 \newcommand\@thesiscertificatebigskip{0.5in}
 \newcommand{\makecertificate}{
-  %\setcounter{page}{2}
+  \setcounter{page}{2}
   \cleardoublepage
   \thispagestyle{empty}
     \begin{center}
