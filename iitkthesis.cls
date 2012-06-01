@@ -279,8 +279,7 @@
 %=============================================================================
 \def\acknowledgments{
   \chapter*{Acknowledgments}
-  \thispagestyle{empty}
-  \doublespace}
+  \thispagestyle{empty}}
 \def\endacknowledgments{%
   \vskip 5cm
   \noindent{\large Date: \rule{4cm}{1sp}\hfill\@author\rule{1cm}{0pt}}
@@ -292,16 +291,16 @@
 %      TEXT   : The caption text.
 %  Macro should be called inside a \parbox of right width, with \normalsize.
 %=============================================================================
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{#1: #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    \singlespace#1: #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
+% \long\def\@makecaption#1#2{%
+% \vskip\abovecaptionskip
+%  \sbox\@tempboxa{#1: #2}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    \singlespacing#1: #2\par
+%  \else
+%    \global \@minipagefalse
+%   \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
 
 %=============================================================================
 % LIST OF FIGURES; LIST OF TABLES
@@ -339,19 +338,18 @@
 % These commands can be used in the thesis to switch between single
 % and double spacing.  This is needed, for instance, in the abstract.
 %=============================================================================
-\newcommand{\oneskip}{1.0}
-\newcommand{\twoskip}{1.5}
-\newcommand{\singlespace}
-  {\renewcommand{\baselinestretch}{\oneskip}\Large\normalsize}
-\newcommand{\doublespace}
-  {\renewcommand{\baselinestretch}{\twoskip}\Large\normalsize}
 
 %=============================================================================
 % Finally set margins per the IITK format
 %=============================================================================
 
 \usepackage[top=25mm, outer=25mm, bottom=25mm, inner=35mm]{geometry}
+
+% Header/spacing options
 \usepackage{fancyhdr}
+\usepackage{setspace}
+\doublespacing
+
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt} % remove the header rule
 \rhead{\thepage}
@@ -363,8 +361,6 @@
 \assignpagestyle{\chapter}{empty}
 
 \usepackage{emptypage}
-
-\doublespace
 
 %=============================================================================
 % END FILE
