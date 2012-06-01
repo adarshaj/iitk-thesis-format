@@ -170,7 +170,7 @@
       {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
     \end{center}
     It is certified that the work contained in the \@doctype\ titled
-     \textbf{\@title}, by \textbf{\@author}, has been carried out under my/our
+     \textbf{\@title}, by \textbf{\@author}, has been carried out under my
      supervision and that this work has not been submitted elsewhere for a degree.\\[\@thesiscertificatebigskip]
     \begin{flushright}
     \rule{6cm}{1sp} \\
