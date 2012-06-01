@@ -286,23 +286,6 @@
   \par\newpage}
 
 %=============================================================================
-% \@makecaption{NUMBER}{TEXT} : Macro to make a figure or table caption.
-%      NUMBER : Figure or table number--e.g., 'Figure 3.2'
-%      TEXT   : The caption text.
-%  Macro should be called inside a \parbox of right width, with \normalsize.
-%=============================================================================
-% \long\def\@makecaption#1#2{%
-% \vskip\abovecaptionskip
-%  \sbox\@tempboxa{#1: #2}%
-%  \ifdim \wd\@tempboxa >\hsize
-%    \singlespacing#1: #2\par
-%  \else
-%    \global \@minipagefalse
-%   \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-%  \fi
-%  \vskip\belowcaptionskip}
-
-%=============================================================================
 % LIST OF FIGURES; LIST OF TABLES
 %  These macros from report.cls have been modified to add entry in the
 %  Contents table
