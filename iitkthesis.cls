@@ -122,18 +122,16 @@
       {\large for the Degree of}\\[\@thesistitlemedskip]
       {\large \@iitbdegree} \\[\@thesistitlemedskip]
       {\large by} \\[\@thesistitlemedskip]
-      {\large \bf \@author} \\
-      {\large \bf (Roll No. \@rollnum)} \\[\@thesistitlebigskip]
+      {\large \bf \@author} \\[\@thesistitlebigskip]
       \vfill
       {\large \textit{to the}} \\
-      {\large \uppercase{\@department}} \\%[\@thesistitlemedskip]
+      {\large \MakeUppercase{Department of \@department}} \\%[\@thesistitlemedskip]
       {\large INDIAN INSTITUTE OF TECHNOLOGY KANPUR}\\%[\@thesistitlemedskip]
       {\large \@date}
       \vfill
     \end{center}
   \end{titlepage}
   \setcounter{footnote}{0}
-  \setcounter{page}{1} %title page is NOT counted
 }
 
 %=============================================================================
@@ -147,7 +145,6 @@
 \def\dedication{
   \newpage
   \thispagestyle{empty}    % No page number
-  \setcounter{page}{0}
   % \addtocounter{page}{-1}
   \chapter*{}            % Required for \vfill to work
   \thispagestyle{empty}    % No page number
@@ -163,9 +160,7 @@
 \newcommand\@thesiscertificatemedskip{0.2in}
 \newcommand\@thesiscertificatebigskip{0.5in}
 \newcommand{\makecertificate}{
-  \setcounter{page}{2}
   \cleardoublepage
-  \thispagestyle{empty}
     \begin{center}
       {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
     \end{center}
@@ -183,12 +178,6 @@
     \@date
     \end{flushleft}
 %change ends    
-
-  \let\thanks\relax
-  \let\maketitle\relax \let\iitbdegree\relax \let\project\relax \let\prelim\relax
-  \let\department\relax
-  \gdef\@thanks{}\gdef\@iitbdegree{}\gdef\@doctype{}
-  \gdef\@department{}
 }
 
 %=============================================================================
@@ -199,8 +188,20 @@
 % the standard abstract.
 %=============================================================================
 \def\abstract{
-  \chapter*{Abstract}
-  \relax\markboth{ABSTRACT}{ABSTRACT}}
+    \cleardoublepage
+    \begin{center}
+      {\large \bf ABSTRACT}\\[\@thesiscertificatebigskip]
+      Name of student: \textbf{\@author}\hspace{1 cm}Roll no: \textbf{\@rollnum} \\
+      Degree for which submitted: \textbf{\@iitbdegree} \\
+      Department: \textbf{\@department} \\
+      Thesis title: \textbf{\@title} \\
+    \end{center}
+    \begin{singlespace}
+      Name of Thesis Supervisor: \textbf{\@advisorname}
+    \end{singlespace}
+    Month and year of thesis submission: \textbf{\@date} \\
+    \vspace{1 cm} \\
+}    
 \def\endabstract{\par\newpage}
 
 %=============================================================================
@@ -212,7 +213,6 @@
 \def\copyrightpage{
   \newpage
   \thispagestyle{empty}    % No page number
-  \setcounter{page}{0}
   % \addtocounter{page}{-1}
   \chapter*{}            % Required for \vfill to work
   \begin{center}
