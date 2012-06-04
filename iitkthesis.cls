@@ -278,11 +278,9 @@
 % - start a new page with ACKNOWLEDGMENTS centered two inches from the top
 %=============================================================================
 \def\acknowledgments{
-  \chapter*{Acknowledgments}
+  \chapter*{Acknowledgements}
   \thispagestyle{empty}}
 \def\endacknowledgments{%
-  \vskip 5cm
-  \noindent{\large Date: \rule{4cm}{1sp}\hfill\@author\rule{1cm}{0pt}}
   \par\newpage}
 
 %=============================================================================
