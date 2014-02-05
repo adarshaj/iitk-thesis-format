@@ -54,7 +54,7 @@
 \newcommand{\setguide}[1]{\def\@advisorname{#1}}
 \newcommand{\setguidedept}[1]{\def\@advisordept{#1}}
 
-
+% TODO: Handle case when there are multiple guides
 % and coadvisor? (initialized to empty)
 %\global\let\@coadvisorname\@empty
 %\newcommand{\setcoguide}[1]{\def\@coadvisorname{#1}}
@@ -165,6 +165,7 @@
       {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
     \end{center}
     It is certified that the work contained in the \@doctype\ titled
+% FIXME: my/our should be chosen based on multiple guides or not.
      \textbf{\@title}, by \textbf{\@author}, has been carried out under my
      supervision and that this work has not been submitted elsewhere for a degree.\\[\@thesiscertificatebigskip]
     \begin{flushright}
@@ -172,6 +173,7 @@
     \@advisorname \\
     \@advisordept \\
     IIT Kanpur 
+% FIXME: Add more blocks if more guides.
     \end{flushright}
 
     \begin{flushleft}
@@ -197,6 +199,7 @@
       Thesis title: \textbf{\@title} \\
     \end{center}
     \begin{singlespace}
+% FIXME: Fix for multiple guides.        
       Name of Thesis Supervisor: \textbf{\@advisorname}
     \end{singlespace}
     Month and year of thesis submission: \textbf{\@date} \\
